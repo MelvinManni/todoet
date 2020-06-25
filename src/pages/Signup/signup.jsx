@@ -22,7 +22,7 @@ function SignUp() {
                     </a>
                 </div>
 
-                <form className='spaceY-lg w100-small w50-lg' action=''>
+                <form className='spaceY-lg w100-small w50-lg' action='/dashboard'>
 
                     <StyledInput label='First Name' type={'text'} icon={user} />
                     <div className='spaceY-md'></div>

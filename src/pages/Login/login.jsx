@@ -21,7 +21,7 @@ function Login() {
           </a>
         </div>
 
-        <form className='spaceY-lg w100-small w50-lg' action=''>
+        <form className='spaceY-lg w100-small w50-lg' action='/dashboard'>
           <StyledInput label='Email Address' type={'email'} icon={mail} />
           <div className='spaceY-md'></div>
           <StyledInput label='Password' type={'password'} icon={lock} />
