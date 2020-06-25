@@ -27,7 +27,7 @@ function Login() {
           <StyledInput label='Password' type={'password'} icon={lock} />
                 
           <div className='spaceY-lg w25-lg w25-small ml-auto'>
-            <ButtonFill label={'Log In'} />
+            <ButtonFill type={'reset'} label={'Log In'} />
           </div>
         </form>
       </Container>

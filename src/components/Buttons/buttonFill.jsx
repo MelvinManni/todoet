@@ -6,7 +6,7 @@ function ButtonFill(props) {
 
   return (
     <div className='buttonFill button-component'>
-      <button onClick={props.onClick} >
+      <button type={props.type} onClick={props.onClick} >
         <div className='riple'>{props.label}</div>
       </button>
     </div>

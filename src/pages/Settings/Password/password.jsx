@@ -22,11 +22,15 @@ function Password() {
           </div>
 
           <div className='spaceY-md'>
-            <StyledInput label={'Confirm password'} type={'password'} icon={lock} />
+            <StyledInput
+              label={'Confirm password'}
+              type={'password'}
+              icon={lock}
+            />
           </div>
 
           <div className='spaceY-lg'>
-            <ButtonOutline label={'Update'} />
+            <ButtonOutline type={'reset'} label={'Update'} />
           </div>
         </form>
       </Container>
