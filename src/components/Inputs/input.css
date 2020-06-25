@@ -1,0 +1,87 @@
+.styledInput {
+  position: relative !important;
+}
+
+.styledInput > input,
+.addInput > input {
+  background: #fefefe;
+  border: 1px solid #8db2e2;
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 2.375rem;
+  min-width: 100%;
+  max-width: max-content;
+  padding: 5px 15px;
+  padding-top: 0.7rem;
+  font-family: 'PT Sans';
+  color: #242235;
+  font-style: normal;
+  font-size: 0.87rem;
+  line-height: 15px;
+}
+
+.styledInput > label {
+  color: #616161;
+  font-size: 0.87rem;
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  position: absolute;
+  bottom: 0.9rem;
+  left: 10px;
+  text-transform: capitalize;
+}
+
+.styledInput > input:focus {
+  box-shadow: 1px 2px 4px #8db2e2;
+}
+
+.styledInput > input:focus ~ label,
+.styledInput > .labelMove ~ label {
+  left: 7px;
+  bottom: 1.6rem;
+  font-size: 0.67rem;
+}
+
+.styledInput > img {
+  width: 1.15rem;
+  position: absolute;
+  right: 10px;
+  bottom: 0.7rem;
+}
+
+.styledInput > input:focus ~ img,
+.styledInput > .labelMove ~ img {
+  filter: invert(37%) sepia(83%) saturate(393%) hue-rotate(322deg)
+    brightness(86%) contrast(87%);
+}
+
+.addInput {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 100px;
+  
+}
+
+.addInput > input {
+  /* min-width: 85%; */
+  border-radius: 4px 0 0 4px;
+}
+
+.addInput > input::placeholder {
+  color: #616161;
+  font-size: 0.87rem;
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+}
+
+.addInput > .buttonFill > button {
+  border-radius: 0 4px 4px 0;
+  min-width: max-content;
+}
+
+.addInput > .buttonFill > button:hover {
+  transform: translateY(0px);
+}

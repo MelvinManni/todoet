@@ -1,0 +1,9 @@
+.errorHolder{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.errorPage nav .avatar{
+    display: none;
+}

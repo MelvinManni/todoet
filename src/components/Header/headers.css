@@ -1,0 +1,15 @@
+header > .header {
+  height: 5.2rem;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a84f44;
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 25px;
+  color: #fefefe;
+}

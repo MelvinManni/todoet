@@ -1,0 +1,99 @@
+.taskComponent {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  min-height: 1.85rem;
+  margin-top: 10px;
+}
+
+.taskComponent > .taskButton {
+  position: relative;
+}
+
+.taskComponent > .taskButton > img {
+  border: none;
+  background: #b23e47;
+  height: 1.85rem;
+  width: 2.9rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5px;
+  padding: 5px;
+  position: absolute;
+  left: -2.9rem;
+  cursor: pointer;
+}
+
+.taskComponent > .taskButton > img:hover{
+    background: #da1121;
+}
+
+.taskComponent > .taskButton > .showTaskIcon{
+    left: 0rem;
+}
+
+
+.taskComponent .taskItem {
+  background: #fefefe;
+  border: 1px solid #616161;
+  border-width: 0px 0 1px 0;
+  box-sizing: border-box;
+  min-width: 100%;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 2.9rem;
+}
+.taskComponent .taskItem.deleteHidden{
+    left: 0rem;
+}
+.taskComponent > .taskItem > .check input {
+  visibility: collapse;
+}
+
+.taskComponent > .taskItem > .check label {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 2px;
+  border: 1.5px solid #616161;
+  margin-right: 10px;
+  display: block;
+  cursor: pointer;
+}
+
+.taskComponent > .taskItem > .check .checked{
+    background-image: url('./../../assets/good.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+      border: 1.5px solid #11AA5B;
+}
+
+.taskComponent .taskItem > .taskContent{
+    width: max-content;
+    position: relative;
+}
+
+.taskComponent .taskItem > .taskContent > p {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #616161;
+  padding: 0 5px;
+}
+
+.taskComponent .taskItem > .taskContent > .strikeThrough::before{
+    content: '';
+    height: 1.5px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.64);
+    position: absolute;
+}

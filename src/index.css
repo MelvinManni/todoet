@@ -7,7 +7,128 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*:focus, *:active {
+  outline: none;
+  outline-style: none;
+}
+
+* {
+  margin: 0;
+  transition: 0.37s ease all;
+  box-sizing: border-box;
+}
+
+a,
+a:focus,
+a:visited {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.flex {
+  display: flex;
+}
+
+.w100-lg {
+  width: 100%;
+}
+
+.w75-lg {
+  width: 75%;
+}
+
+.w50-lg {
+  width: 50%;
+}
+
+.w25-lg {
+  width: 25%;
+}
+
+/* Margin */
+
+.spaceY-sm {
+  margin-top: 10px;
+}
+
+.spaceY-md {
+  margin-top: 20px;
+}
+
+.spaceY-lg {
+  margin-top: 50px;
+}
+
+.spaceY-xl {
+  margin-top: 80px;
+}
+
+.spaceX-sm {
+  margin-left: 10px;
+}
+
+.spaceX-md {
+  margin-left: 20px;
+}
+
+.spaceX-lg {
+  margin-left: 50px;
+}
+
+.spaceX-xl {
+  margin-left: 80px;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+@media all and (max-width: 720px) {
+  .w100-small {
+    width: 100%;
+  }
+
+  .w75-small {
+    width: 75%;
+  }
+
+  .w50-small {
+    width: 50%;
+  }
+
+  .w25-small {
+    width: 25%;
+  }
+}
+
+
+.empty-task{
+  text-align: center;
+  position: relative;
+  top: 50px;
+}
+
+.empty-task > img{
+  width: 50px;
+}
+
+.addTaskForm{
+  position: sticky;
+  width: 90%;
+  bottom: 40px;
+}
+
+@media all and (max-width: 720px) {
+  
+.addTaskForm{
+  width: 85%;
+}
 }

@@ -1,0 +1,27 @@
+.typography > .title {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 19px;
+  color: #242235;
+  text-transform: uppercase;
+}
+
+.typography > .text {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.815rem;
+  line-height: 21px;
+  color: #2f4858;
+}
+
+.typography > .link {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.875rem;
+  line-height: 21px;
+  color: #A84F44;
+}
