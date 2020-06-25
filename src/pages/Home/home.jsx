@@ -1,6 +1,5 @@
 import React from 'react';
 import Container from '../../components/Container/container';
-import Header from '../../components/Header/headers';
 import Nav from '../../components/Nav/nav';
 import Logo from '../../components/Logo/logo';
 import ButtonOutline from '../../components/Buttons/buttonOutline';
