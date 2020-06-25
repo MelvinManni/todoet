@@ -4,6 +4,7 @@ import Nav from '../../components/Nav/nav';
 import Logo from '../../components/Logo/logo';
 import ButtonOutline from '../../components/Buttons/buttonOutline';
 import ButtonFill from '../../components/Buttons/buttonFill';
+import './home.css'
 
 function Home() {
   return (
