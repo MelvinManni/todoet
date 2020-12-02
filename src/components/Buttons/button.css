@@ -33,8 +33,9 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
-  height: 2.375rem;
+  padding: 10px 15px;
+  font-size: 18px;
+  height: 50px;
   min-width: 100%;
   max-width: max-content;
 }
@@ -50,8 +51,27 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
-  height: 2.375rem;
+  padding: 10px 15px;
+  font-size: 18px;
+  height: 50px;
   min-width: 100%;
   max-width: max-content;
+}
+
+.buttonOutline > button img{
+  width: 35px;
+}
+
+.buttonFill > button img{
+  width: 35px;
+}
+
+.buttonOutline > button:disabled{
+  opacity: 0.9;
+  cursor: wait;
+}
+
+.buttonFill > button:disabled{
+  opacity: 0.9;
+  cursor: wait;
 }

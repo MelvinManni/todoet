@@ -8,7 +8,7 @@
   border: 1px solid #8db2e2;
   box-sizing: border-box;
   border-radius: 4px;
-  height: 2.375rem;
+  height: 50px;
   min-width: 100%;
   max-width: max-content;
   padding: 5px 15px;
@@ -18,16 +18,17 @@
   font-style: normal;
   font-size: 0.87rem;
   line-height: 15px;
+  padding-right: 30px;
 }
 
 .styledInput > label {
   color: #616161;
-  font-size: 0.87rem;
+  font-size: 14.4px;
   font-family: 'Inconsolata';
   font-style: normal;
   font-weight: 700;
   position: absolute;
-  bottom: 0.9rem;
+  bottom: 17px;
   left: 10px;
   text-transform: capitalize;
 }
@@ -39,15 +40,18 @@
 .styledInput > input:focus ~ label,
 .styledInput > .labelMove ~ label {
   left: 7px;
-  bottom: 1.6rem;
-  font-size: 0.67rem;
+  bottom: 43px;
+  font-size: 12px;
+  background-color: #fff;
+  padding: 2px;
+  width: max-content;
 }
 
 .styledInput > img {
   width: 1.15rem;
   position: absolute;
   right: 10px;
-  bottom: 0.7rem;
+  bottom: 16px;
 }
 
 .styledInput > input:focus ~ img,
@@ -71,7 +75,7 @@
 
 .addInput > input::placeholder {
   color: #616161;
-  font-size: 0.87rem;
+  font-size: 14px;
   font-family: 'Inconsolata';
   font-style: normal;
   font-weight: 700;

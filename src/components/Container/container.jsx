@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from '../Footer/footer';
 
 const style = {
-  padding: '2.7rem',
+  padding: '1.7rem',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

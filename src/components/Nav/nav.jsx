@@ -1,24 +1,27 @@
-import React from 'react';
-import './nav.css';
-import icon from './../../assets/user.svg';
+import React, { useContext } from "react";
+import "./nav.css";
+import icon from "./../../assets/logo.svg";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContext";
 
 function Nav(props) {
+  const { currentUser } = useContext(AuthContext);
   return (
     <nav>
       <div>
-        <div className='circle'></div>
-        <a href={props.link}>
-          <img src={props.icon} alt='' />
-        </a>
+        <div className="circle"></div>
+        {props.link === undefined ? (
+          <img src={props.icon} alt="" />
+        ) : (
+          <Link to={props.link}>
+            <img src={props.icon} alt="" />
+          </Link>
+        )}
       </div>
 
-      <div className='avatar'>
-        {!props.name ? <p>Alias</p> : <p>{props.name}</p>}
-        {!props.avatar ? (
-          <img src={icon} alt='' />
-        ) : (
-          <img src={props.avatar} alt='' />
-        )}
+      <div className="avatar">
+        {<p>{"Welcome "+ currentUser.displayName}</p>}
+        {!props.avatar ? <img src={icon} alt="" /> : <img src={props.avatar} alt="" />}
       </div>
     </nav>
   );

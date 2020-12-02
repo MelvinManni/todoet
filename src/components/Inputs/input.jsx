@@ -1,30 +1,27 @@
 /* eslint-disable react/jsx-no-duplicate-props */
-import React from 'react';
-import './input.css';
+import React from "react";
+import "./input.css";
 
 function StyledInput(props) {
+  const { helperText, ...rest } = props;
   const setlabelTransition = (e) => {
     e.preventDefault();
-    if (e.target.value !== '') {
-      e.target.classList.add('labelMove');
+    if (e.target.value !== "") {
+      e.target.classList.add("labelMove");
     } else {
-      e.target.classList.remove('labelMove');
+      e.target.classList.remove("labelMove");
     }
   };
 
   return (
-    <div className='styledInput'>
-      <input
-        type={props.type}
-        onChange={props.onChange}
-        name={props.name}
-        value={props.value}
-        htmlFor={props.id}
-        onChange={setlabelTransition}
-      />
-      <img src={props.icon} alt='' />
-      <label htmlFor={props.id}>{props.label}</label>
-    </div>
+    <>
+      <div className="styledInput">
+        <input {...rest} type={props.type} onChange={props.onChange} name={props.name} value={props.value} id={props.name} onBlur={setlabelTransition} />
+        <img src={props.icon} alt="" />
+        <label htmlFor={props.name}>{props.label}</label>
+      </div>
+      <small className="helperText">{helperText}</small>
+    </>
   );
 }
 

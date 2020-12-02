@@ -2,7 +2,7 @@
   font-family: 'Inconsolata';
   font-style: normal;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 24px;
   line-height: 19px;
   color: #242235;
   text-transform: uppercase;
@@ -12,7 +12,7 @@
   font-family: 'PT Sans';
   font-style: normal;
   font-weight: bold;
-  font-size: 0.815rem;
+  font-size: 16.5px;
   line-height: 21px;
   color: #2f4858;
 }
@@ -21,7 +21,7 @@
   font-family: 'PT Sans';
   font-style: normal;
   font-weight: bold;
-  font-size: 0.875rem;
+  font-size: 16.5px;
   line-height: 21px;
   color: #A84F44;
 }

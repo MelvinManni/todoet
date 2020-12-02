@@ -27,7 +27,7 @@ function Details() {
           </div>
 
           <div className='spaceY-lg'>
-            <ButtonOutline type={'reset'} label={'Update'} />
+            <ButtonOutline type={'submit'} label={'Update'} />
           </div>
         </form>
       </Container>

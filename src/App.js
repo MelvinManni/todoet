@@ -1,51 +1,45 @@
-import React from 'react';
-import Home from './pages/Home/home';
-import Login from './pages/Login/login';
-import SignUp from './pages/Signup/signup';
-import Dashboard from './pages/Dashboard/dashboard';
-import Settings from './pages/Settings/settings';
-import Details from './pages/Settings/Details/details';
-import Password from './pages/Settings/Password/password';
-import { Switch, Route } from 'react-router';
-import Error404 from './pages/404/404';
+import React from "react";
+import Home from "./pages/Home/home";
+import Login from "./pages/Login/login";
+import SignUp from "./pages/Signup/signup";
+import Dashboard from "./pages/Dashboard/dashboard";
+import Settings from "./pages/Settings/settings";
+import Details from "./pages/Settings/Details/details";
+import Password from "./pages/Settings/Password/password";
+import { Switch, Route } from "react-router";
+import Error404 from "./pages/404/404";
+import AuthProvider from "./Context/AuthContext";
+import PrivateRoute from "./Private/PrivateRoute";
 
 function App() {
   return (
-    <div className='App'>
+    <AuthProvider>
       <Switch>
-        <Route exact path='/'>
+        <Route exact path="/">
           <Home />
         </Route>
 
-        <Route exact path='/login'>
+        <Route exact path="/login">
           <Login />
         </Route>
 
-        <Route exact path='/signup'>
+        <Route exact path="/signup">
           <SignUp />
         </Route>
 
-        <Route exact path='/dashboard'>
-          <Dashboard />
-        </Route>
+        <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
-        <Route exact path='/settings'>
-          <Settings />
-        </Route>
+        <PrivateRoute exact path="/settings" component={Settings} />
 
-        <Route exact path='/settings/details'>
-          <Details />
-        </Route>
+        <PrivateRoute exact path="/settings/details" component={Details} />
 
-        <Route exact path='/settings/password'>
-          <Password />
-        </Route>
+        <PrivateRoute exact path="/settings/password" component={Password} />
 
-        <Route exact path='*'>
+        <Route exact path="*">
           <Error404 />
         </Route>
       </Switch>
-    </div>
+    </AuthProvider>
   );
 }
 

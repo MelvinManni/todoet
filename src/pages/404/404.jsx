@@ -4,6 +4,7 @@ import Nav from '../../components/Nav/nav';
 import Container from '../../components/Container/container';
 import './404.css';
 import ButtonFill from '../../components/Buttons/buttonFill';
+import { Link } from 'react-router-dom';
 
 function Error404() {
   return (
@@ -15,9 +16,9 @@ function Error404() {
         </div>
 
         <div className='spaceY-lg w25-lg w50-small'>
-          <a href='/dashboard'>
+          <Link href='/'>
             <ButtonFill label='Return Home' />
-          </a>
+          </Link>
           <div className="spaceY-md"></div>
         </div>
       </Container>

@@ -1,65 +1,84 @@
 /* eslint-disable react/jsx-no-duplicate-props */
-import React, { useState } from 'react';
-import del from './../../assets/delete.svg';
-import './task.css';
+import React, { useContext } from "react";
+import { AuthContext } from "../../Context/AuthContext";
+import firebaseApp from "../../firebase/firebase";
+import del from "./../../assets/delete.svg";
+import "./task.css";
 
 function Task(props) {
-  const [checkEffect, setCheckEffect] = useState(false);
+  const { setData, data, index, checked } = props;
+  const { currentUser } = useContext(AuthContext);
 
+  const updateTask = (uid, data) => {
+    firebaseApp
+      .firestore()
+      .collection("data")
+      .doc(uid)
+      .update({
+        tasks: data,
+      })
+      .then((res) => {
+        getTasks(uid);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const getTasks = (uid) => {
+    firebaseApp
+      .firestore()
+      .collection("data")
+      .doc(uid)
+      .get()
+      .then((res) => {
+        const fsTasks = res.data().tasks;
+        setData(fsTasks);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const handleChange = (e) => {
+    const values = [...data];
     if (e.target.checked) {
-      setCheckEffect(true);
-      e.target.parentNode.className = 'checked';
+      console.log(values[index]["done"]);
+      values[index]["done"] = true;
+      updateTask(currentUser.uid, values);
+      setData(values);
     } else {
-      setCheckEffect(false);
-      e.target.parentNode.className = '';
+      values[index]["done"] = false;
+      updateTask(currentUser.uid, values);
+      setData(values);
     }
   };
 
   return (
-    <div className='taskComponent'>
-      <div className='taskButton'>
-        {checkEffect ? (
-          <img
-            onClick={props.delete}
-            id={props.deleteId}
-            className='showTaskIcon'
-            src={del}
-            alt=''
-          />
+    <div className="taskComponent">
+      <div className="taskButton">
+        {checked ? (
+          <img onClick={props.delete} id={props.deleteId} className="showTaskIcon" src={del} alt="" />
         ) : (
-          <img onClick={props.onClick} id={props.deleteId} src={del} alt='' />
+          <img onClick={props.delete} id={props.deleteId} src={del} alt="" />
         )}
       </div>
-      {checkEffect ? (
-        <div className='taskItem'>
-          <div className='check'>
-            <label>
-              <input onChange={handleChange} type='checkbox' name='check'/>
+      {checked ? (
+        <div className="taskItem">
+          <div className="check">
+            <label className={checked ? "checked" : ""}>
+              <input onChange={handleChange} type="checkbox" name="check" />
             </label>
           </div>
-          <div className='taskContent'>
-            {checkEffect ? (
-              <p className='strikeThrough'>{props.task}</p>
-            ) : (
-              <p>{props.task}</p>
-            )}
-          </div>
+          <div className="taskContent">{checked ? <p className="strikeThrough">{props.task}</p> : <p>{props.task}</p>}</div>
         </div>
       ) : (
-        <div className='taskItem deleteHidden'>
-          <div className='check'>
+        <div className="taskItem deleteHidden">
+          <div className="check">
             <label>
-              <input onChange={handleChange} type='checkbox' name='check' />
+              <input onChange={handleChange} type="checkbox" name="check" />
             </label>
           </div>
-          <div className='taskContent'>
-            {checkEffect ? (
-              <p className='strikeThrough'>{props.task}</p>
-            ) : (
-              <p>{props.task}</p>
-            )}
-          </div>
+          <div className="taskContent">{checked ? <p className="strikeThrough">{props.task}</p> : <p>{props.task}</p>}</div>
         </div>
       )}
     </div>
