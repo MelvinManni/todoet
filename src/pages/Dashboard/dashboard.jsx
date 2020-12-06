@@ -97,7 +97,7 @@ function Dashboard() {
       return null;
     } else {
       const values = tasks;
-      values.push({ done: false, value: taskInput });
+      values.unshift({ done: false, value: taskInput });
       setTasks(values);
       setTaskInput("");
       document.getElementById("addInput").focus();
