@@ -16,7 +16,7 @@ function Error404() {
         </div>
 
         <div className='spaceY-lg w25-lg w50-small'>
-          <Link href='/'>
+          <Link to='/'>
             <ButtonFill label='Return Home' />
           </Link>
           <div className="spaceY-md"></div>

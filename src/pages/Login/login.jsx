@@ -12,9 +12,11 @@ import { useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import firebaseApp from "../../firebase/firebase";
+import { useToasts } from "react-toast-notifications";
 
 function Login() {
   const history = useHistory();
+  const { addToast } = useToasts();
   const [status, setStatus] = useState(false);
   const { currentUser } = useContext(AuthContext);
   const validateSchema = Yup.object().shape({
@@ -47,7 +49,10 @@ function Login() {
           }, 200);
         })
         .catch((err) => {
-          console.log(err);
+          addToast(err.message, {
+            appearance: "error",
+            autoDismiss: true,
+          });
           setStatus(false);
         });
     },

@@ -18,11 +18,12 @@ function Nav(props) {
           </Link>
         )}
       </div>
-
-      <div className="avatar">
-        {<p>{"Welcome "+ currentUser.displayName}</p>}
-        {!props.avatar ? <img src={icon} alt="" /> : <img src={props.avatar} alt="" />}
-      </div>
+      {currentUser !== null && (
+        <div className="avatar">
+          {<p>{"Welcome " + currentUser.displayName}</p>}
+          {!props.avatar ? <img src={icon} alt="" /> : <img src={props.avatar} alt="" />}
+        </div>
+      )}
     </nav>
   );
 }

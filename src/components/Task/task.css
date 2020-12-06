@@ -9,19 +9,21 @@
 
 .taskComponent > .taskButton {
   position: relative;
+  
 }
 
 .taskComponent > .taskButton > img {
-  border: none;
   background: #b23e47;
-  height: 1.85rem;
+  border: none;
+  height: 100%;
   width: 2.9rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   border-radius: 1.5px;
-  padding: 5px;
+  padding: 8px 10px;
+  border-radius: 4px 0 0 4px;
   position: absolute;
   left: -2.9rem;
   cursor: pointer;

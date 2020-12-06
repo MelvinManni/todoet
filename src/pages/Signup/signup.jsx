@@ -12,11 +12,12 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import firebaseApp from "../../firebase/firebase";
 import { useHistory } from "react-router";
-import { toast } from "react-toastify";
+import { useToasts } from "react-toast-notifications";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
 
 function SignUp() {
+  const { addToast } = useToasts();
   const history = useHistory();
   const { currentUser } = useContext(AuthContext);
   const [status, setStatus] = useState(false);
@@ -62,7 +63,10 @@ function SignUp() {
             })
             .then(() => {
               setStatus(false);
-              toast.success("Account created successfully, you will be redirected");
+              addToast("Account created successfully, you will be redirected", {
+                appearance: "success",
+                autoDismiss: true,
+              });
               resetForm();
               setTimeout(() => {
                 history.push("/dashboard");
@@ -70,9 +74,11 @@ function SignUp() {
             });
         })
         .catch((err) => {
-          console.log(err);
+          addToast(err.message, {
+            appearance: "error",
+            autoDismiss: true,
+          });
           setStatus(false);
-          toast.error("Error");
         });
     },
   });
@@ -84,10 +90,11 @@ function SignUp() {
         <Typograpy type="title">Create account</Typograpy>
         <div className="flex spaceY-md flex-col-sm">
           <Typograpy>Already have an account ?</Typograpy>
-
-          <Link to="/signup" className="spaceX-sm">
-            <Typograpy type="link">Sign In</Typograpy>
-          </Link>
+          <div className="spaceX-sm">
+            <Link to="/login">
+              <Typograpy type="link">Sign In</Typograpy>
+            </Link>
+          </div>
         </div>
 
         <form className="spaceY-lg w100-small w50-lg" onSubmit={formik.handleSubmit}>
@@ -132,7 +139,7 @@ function SignUp() {
           />
 
           <div className="spaceY-lg w25-lg w100-small ml-auto">
-            <ButtonFill  loading={status} type={"submit"} label={"Sign Up"} />
+            <ButtonFill loading={status} type={"submit"} label={"Sign Up"} />
           </div>
         </form>
       </Container>

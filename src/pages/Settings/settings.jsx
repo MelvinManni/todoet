@@ -15,11 +15,11 @@ function Settings() {
         <Typograpy type={"title"}>Settings</Typograpy>
 
         <div className="settingsBtn w50-lg w100-small spaceY-xl">
-          <Link href="/settings/details">
+          <Link to="/settings/details">
             <ButtonOutline label={"Change details"} />
           </Link>
           <div className="spaceY-md">
-            <Link href="/settings/password">
+            <Link to="/settings/password">
               <ButtonOutline label={"Change Password"} />
             </Link>
           </div>

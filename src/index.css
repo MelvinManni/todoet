@@ -3,6 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 *:focus,
@@ -34,8 +35,29 @@ button {
   text-transform: capitalize;
 }
 
+.spinner {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.spinner img {
+  max-width: 80px;
+}
+
 .flex {
   display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  margin: 20px 0 ;
 }
 
 .w100-lg {
@@ -135,7 +157,7 @@ button {
     width: 85%;
   }
 
-  .flex-col-sm{
+  .flex-col-sm {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;

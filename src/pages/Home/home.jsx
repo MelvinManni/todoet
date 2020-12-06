@@ -25,11 +25,11 @@ function Home() {
         </div>
 
         <div className="w50-lg w100-small spaceY-xl">
-          <Link href="/login">
+          <Link to="/login">
             <ButtonOutline label={"Login"} />
           </Link>
           <div className="spaceY-md"></div>
-          <Link href="/signup">
+          <Link to="/signup">
             <ButtonFill label="Signup" />
           </Link>
         </div>
