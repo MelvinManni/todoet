@@ -7,10 +7,9 @@ footer {
   height: 14rem;
   position: relative;
   overflow: hidden;
-  
 }
 
-footer  > .circle {
+footer > .circle {
   width: 14rem;
   height: 14rem;
   border-radius: 50%;
@@ -21,11 +20,29 @@ footer  > .circle {
   z-index: -1;
 }
 
+.footerHolder {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
 
-.footerHolder{
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: -1;
+footer .footerLink {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 15px;
+  min-width: 100%;
+}
+
+.footerLink a {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16.5px;
+  line-height: 21px;
+  color: #2f4858;
 }
